@@ -1,0 +1,40 @@
+.todoitem {
+    position: relative;
+    list-style: none;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(236, 234, 234);
+}
+.todoitem .select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: auto 10px;
+    height: 37px;
+    width: 20px;
+}
+.todoitem .select:hover {
+    cursor: pointer;
+}
+.todoitem .data {
+    display: block;
+    text-align: left;
+    margin-left: 27px;
+}
+.todoitem .data.finish {
+    text-decoration: line-through;
+}
+.todoitem .delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px 10px;
+    height: 25px;
+    padding: 0 5px;
+    border: 1px solid #ded9d9;
+    border-radius: 5px;
+}
+.todoitem .delete:hover {
+    background-color: #29aa29;
+    color: white;
+    cursor: pointer;
+}

@@ -63,9 +63,9 @@ class App extends Component {
     })
 
     return (
-      <div>
-        <h1>To Do List</h1>
-        <input type="text" placeholder="add new todo" onKeyUp={this.onKeyUp}></input>
+      <div className="App">
+        <h1 className="title">To Do List</h1>
+        <input type="text" placeholder="add new todo" className="new-item" onKeyUp={this.onKeyUp}></input>
         <ul>
           {todoitems}
         </ul>

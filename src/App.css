@@ -1,0 +1,26 @@
+.App {
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  
+}
+.title {
+    padding: 20px 0 15px 0;
+    color: #87e487;
+}
+.new-item {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid rgb(236, 234, 234);
+    border-bottom: 1px solid rgb(236, 234, 234);
+}
+.new-item:focus {
+    outline: none;
+}
+.new-item::placeholder {
+    color: rgb(226, 226, 226);
+}
