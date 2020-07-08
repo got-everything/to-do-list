@@ -17,6 +17,7 @@ class App extends Component {
     }
 
     this.onKeyUp = this.onKeyUp.bind(this);
+    this.onFinishItem = this.onFinishItem.bind(this);
     this.onDeleteItem = this.onDeleteItem.bind(this);
   }
 
@@ -28,7 +29,17 @@ class App extends Component {
     event.currentTarget.value = '';
 
     let items = clone(this.state.items);
-    items.push({value: value});
+    items.push({value: value, finish: false});
+    this.setState({items: items});
+  }
+
+  onFinishItem (index, finish) {
+    let items = clone(this.state.items);
+    items.forEach((item, i) => {
+      if (index === i) {
+        item.finish = finish;
+      }
+    });
     this.setState({items: items});
   }
 
@@ -45,7 +56,9 @@ class App extends Component {
       <ToDoItem 
         key={i}
         id={i}
-        value={item.value} 
+        value={item.value}
+        finish={item.finish}
+        onFinishItem={this.onFinishItem} 
         onDeleteItem={this.onDeleteItem}/>)
     })
 
