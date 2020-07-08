@@ -3,23 +3,32 @@ import './App.css';
 
 import ToDoItem from './ToDoItem';
 
+function clone(a) {
+  return JSON.parse(JSON.stringify(a));
+}
+
 class App extends Component {
 
   constructor () {
     super();
 
     this.state = {
-      items: [
-        {value: 'Get up early'},
-        {value: 'Make a cup of tea'}
-      ]
+      items: [] //{value}
     }
 
     this.onKeyUp = this.onKeyUp.bind(this);
   }
 
   onKeyUp (event) {
-    console.log(event.keyCode);
+    if (event.keyCode !== 13) return;
+
+    let value = event.currentTarget.value;
+    if (value.trim().length === 0) return;
+    event.currentTarget.value = '';
+
+    let items = clone(this.state.items);
+    items.push({value: value});
+    this.setState({items: items});
   }
 
   render () {
