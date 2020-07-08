@@ -17,6 +17,7 @@ class App extends Component {
     }
 
     this.onKeyUp = this.onKeyUp.bind(this);
+    this.onDeleteItem = this.onDeleteItem.bind(this);
   }
 
   onKeyUp (event) {
@@ -31,13 +32,21 @@ class App extends Component {
     this.setState({items: items});
   }
 
+  onDeleteItem (index) {
+    let items = clone(this.state.items);
+    items = items.filter((item, i) => i !== index);
+    this.setState({items: items});
+  }
+
   render () {
     let todoitems = [];
     this.state.items.forEach((item, i) => {
       todoitems.push(
       <ToDoItem 
         key={i}
-        value={item.value} />)
+        id={i}
+        value={item.value} 
+        onDeleteItem={this.onDeleteItem}/>)
     })
 
     return (
