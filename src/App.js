@@ -27,6 +27,7 @@ class App extends Component {
     this.state.items.forEach((item, i) => {
       todoitems.push(
       <ToDoItem 
+        key={i}
         value={item.value} />)
     })
 
