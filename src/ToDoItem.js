@@ -24,13 +24,20 @@ class ToDoItem extends Component {
                 <input  className="select"
                         type="checkbox" 
                         checked={this.props.finish}
-                        onChange={(event) => this.props.onFinishItem(this.props.id, event.currentTarget.checked)} />
-                <label className="data" style={{textDecoration: this.props.finish?"line-through":"none"}}>{this.props.value}</label>
-                <button className="delete" onClick={() => this.props.onDeleteItem(this.props.id)}>
+                        onChange={
+                            (event) => 
+                            this.props.onFinishItem(this.props.id, 
+                            event.currentTarget.checked)} />
+                <label className="data" 
+                       style={{textDecoration: this.props.finish?"line-through":"none"}}>
+                           {this.props.value}
+                </label>
+                <button className="delete" 
+                        onClick={() => this.props.onDeleteItem(this.props.id)}>
                     Delete
                 </button>
             </li>
-        )
+        );
     }
 
     componentWillMount () {

@@ -115,7 +115,7 @@ class App extends Component {
   }
 
   componentWillUnmount () {
-    Utils.logUpdating("=============== UNMOUNTING ===============");
+    Utils.logUnmounting("=============== UNMOUNTING ===============");
     Utils.logUnmounting("App componentWillUnmount");
   }
 }
